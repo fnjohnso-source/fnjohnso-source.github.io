@@ -1716,6 +1716,7 @@ document.addEventListener('keydown', e => {
   }
 });
 
+
 // ── Audience filter
 const filterBtns = document.querySelectorAll('.aud-btn');
 const allCards   = document.querySelectorAll('[data-audience]');
@@ -1728,9 +1729,9 @@ filterBtns.forEach(btn => {
     allCards.forEach(card => {
       const audiences = card.dataset.audience || '';
       if (filter === 'all' || audiences.includes(filter)) {
-        card.classList.remove('hidden');
+        card.style.display = '';
       } else {
-        card.classList.add('hidden');
+        card.style.display = 'none';
       }
     });
   });
